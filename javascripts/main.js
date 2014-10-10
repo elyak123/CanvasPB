@@ -1,8 +1,8 @@
-function inicio(){
-	var dibujo;
-	var lienzo;
-	dibujo = document.getElementById("dibujito");
-	lienzo = dibujo.getContext("2d");	
+//function inicio(){
+//	var dibujo;
+//	var lienzo;
+//	dibujo = document.getElementById("dibujito");
+//	lienzo = dibujo.getContext("2d");	
 	//lienzo.moveTo(1,1);	
 	//lienzo.lineTo(1,299);
 	//lienzo.lineTo(299,299);
