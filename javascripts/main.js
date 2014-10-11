@@ -3,22 +3,20 @@ function inicio(){
 	var lienzo;
 	dibujo = document.getElementById("dibujito");
 	lienzo = dibujo.getContext("2d");	
-	//lienzo.moveTo(1,1);	
-	//lienzo.lineTo(1,299);
-	//lienzo.lineTo(299,299);
-	//lienzo.lineTo(299,1);
-	//lienzo.lineTo(1,1);
-	//lienzo.strokeStyle = "#F00";
-	//lienzo.stroke();
-	//lienzo.beginPath(); permite crear otro trazo con un color diferente
-	 lienzo.beginPath();
-	 lienzo.strokeStyle = "#F00";
+	lienzo.beginPath();
+	lienzo.strokeStyle = "#F00";
 	 //lienzo.arc(x del centro, y del centro, radio del ciculo, circunferencia en radianes)
-	 lienzo.arc(150,150, 100, (Math.PI * 2 ), false);
-	 lienzo.closePath();
-	 lienzo.stroke();
-	 dibujarGrilla(lienzo);
+	circulo(lienzo)
+	dibujarGrilla(lienzo);
+	areabcurva(lienzo);
 
+}
+function circulo (c){
+	c.arc(150,150, 100, (Math.PI * 2 ), false);
+	c.closePath();
+	c.stroke();
+	c.fillStyle ="red";
+	c.fill()
 }
 function dibujarGrilla (l){
 	var ancho = 300, alto = 300;
@@ -39,5 +37,3 @@ function dibujarGrilla (l){
 		l.stroke();
 	}
 }
-
-
