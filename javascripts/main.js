@@ -3,6 +3,13 @@ function inicio(){
 	var lienzo;
 	dibujo = document.getElementById("dibujito");
 	lienzo = dibujo.getContext("2d");	
+	//lienzo.moveTo(1,1);	
+	//lienzo.lineTo(1,299);
+	//lienzo.lineTo(299,299);
+	//lienzo.lineTo(299,1);
+	//lienzo.lineTo(1,1);
+	//lienzo.strokeStyle = "#F00";
+	//lienzo.stroke();
 	//lienzo.beginPath(); permite crear otro trazo con un color diferente
 	 lienzo.beginPath();
 	 lienzo.strokeStyle = "#F00";
@@ -11,34 +18,26 @@ function inicio(){
 	 lienzo.closePath();
 	 lienzo.stroke();
 	 dibujarGrilla(lienzo);
+
 }
 function dibujarGrilla (l){
 	var ancho = 300, alto = 300;
 	var nlineas = 30;
 	var anchoColumna = ancho / nlineas;
 	var anchoFila = alto / nlineas;
-	for(lapiz = 0; lapiz <= 300; lapiz = lapiz + anchoColumna )
+		for(lapiz = 0; lapiz <= 300; lapiz = lapiz + anchoColumna )
 	{
+		//lienzo.moveTo( linea, 0 );
+		//lienzo.lineTo( linea, alto);
 		l.beginPath();
 		l.strokeStyle = "#555555"
+		l.moveTo( lapiz, 0);
+		l.lineTo( lapiz, ancho);
+		l.stroke();
 		l.moveTo( 0, lapiz);
-		l.lineTo( ancho, alto + lapiz);
-		l.stroke();
-		l.closePath();
-		l.beginPath();
-		l.moveTo( 0, alto - lapiz );
- 		l.lineTo( ancho - lapiz, 0 );
-		l.stroke();
-		l.closePath();
-		l.beginPath();
-		l.moveTo( ancho - lapiz, 0 );
 		l.lineTo( ancho, lapiz);
 		l.stroke();
-		l.closePath();
-		l.beginPath();
-		l.moveTo( ancho, lapiz );
-		l.lineTo( lapiz, alto );
-		l.stroke();
-		l.closePath();
 	}
 }
+
+
