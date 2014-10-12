@@ -1,8 +1,12 @@
+var lienzo, t, b;
 function inicio(){
 	var dibujo;
-	var lienzo;
+	t = document.getElementById("usuario");
+	b = document.getElementById("boton");
 	dibujo = document.getElementById("dibujito");
-	lienzo = dibujo.getContext("2d");	
+	lienzo = dibujo.getContext("2d");
+	b.addEventListener("click", dibujarGrilla);
+
 	//lienzo.beginPath(); permite crear otro trazo con un color diferente
 	lienzo.beginPath();
 	//lienzo.strokeStyle = "#F00";
@@ -16,10 +20,10 @@ function inicio(){
 	lienzo.lineTo(0,0);
 	lienzo.stroke();
 	lienzo.closePath();
-	dibujarGrilla(lienzo);
 	circulo(lienzo);
 }
 function circulo (c){
+
 	//lienzo.arc(x del centro, y del centro, radio del ciculo, circunferencia en radianes)
 	c.beginPath();
 	c.fillStyle ="#F54D27";
@@ -30,10 +34,10 @@ function circulo (c){
 	c.fill();
 	c.closePath();
 }
-
 function dibujarGrilla (l){
+	var l = lienzo;
 	var ancho = 300, alto = 300;
-	var nlineas = 30;
+	var nlineas = Number(t.value);
 	var anchoColumna = ancho / nlineas;
 	var anchoFila = alto / nlineas;
 	for(lapiz = 0; lapiz <= 300; lapiz = lapiz + anchoColumna )
